@@ -1,0 +1,141 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+:root{
+  --itens-colors: white;
+  --icon-bg-colors:black;
+  --bg-image: url(./assets/bg-mobile.jpg);
+  --border-color: rgba(255,255,255,0.5);
+  --button-bg-color: rgba(255,255,255,0.1);
+  --button-bg-color-hover: rgba(255,255,255, 0.05); 
+  --avatar-image:url(./assets/AvatarDark)
+}
+
+.light{
+  --itens-colors:black;
+  --icon-bg-colors:white;
+  --bg-image: url(./assets/bg-mobile-light.jpg);
+  --border-color: rgba(0,0,0,0.5);
+  --button-bg-color: rgba(0,0,0,0.05);
+  --button-bg-color-hover: rgba(0,0,0,0.1);
+  --avatar-image:url(./assets/AvatarLight)
+}
+
+body{
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position:top center;
+  background-size: cover;
+}
+
+body *{
+font-family: "Inter", sans-serif;
+color: var(--itens-colors);
+}
+
+#container{
+  width: 588px;
+  padding: 0 24px;
+  margin: 56px auto 0px;
+}
+
+#profile{
+  padding: 24px;
+  text-align: center;
+}
+
+#profile img{
+  width: 112px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+}
+
+#profile p{
+  margin-top:20px;
+  font-weight: 600;
+  line-height: 24px
+}
+
+#switch{
+  margin: 0 auto 24px;
+  width: 58px;
+  position: relative;
+}
+
+#switch button{
+  width: 22px;
+  height: 22px;
+  background: var(--icon-bg-colors) url(./assets/MoonStars.svg) no-repeat center;
+  border:0;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top:50%;
+  left: 3px;
+  transform: translateY(-50%);
+}
+
+.light #switch button{
+  right: 3px;
+  background: var(--icon-bg-colors) url(./assets/Sun.svg) no-repeat center;
+  left: initial;
+}
+
+#switch span{
+  display: block;
+  width: 56px;
+  height: 24px;
+  background: var(--button-bg-color);
+  border: 1.5px solid var(--border-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ul li a{
+  display: flex;
+  padding: 16px 0px;
+
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+
+  text-decoration: none;
+  font-weight: 600;
+
+  background: var(--button-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  
+  
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition: background-color 0.3s ;
+  transition: border 0.3s ;
+}
+
+ul li a:hover{
+  background-color: var(--button-bg-color-hover);
+  border: 1px solid var(--itens-colors);
+}
+
+ion-icon {
+  font-size: 24px;
+}
+
+
+/* 
+display: inline - Ocupa somente o espaço do conteúdo (Se ajusta de acordo com o elemento pai)
+display: block - Ocupa toda a linha do container pai (Se ajusta de acordo com o elemento pai)
+display: flex - Ordena os elementos filhos nos eixos X e Y da div (Distribui os elementos filhos)
+*/
