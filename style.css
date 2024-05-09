@@ -11,7 +11,8 @@
   --border-color: rgba(255,255,255,0.5);
   --button-bg-color: rgba(255,255,255,0.05);
   --button-bg-color-hover: rgba(255,255,255, 0.02); 
-  --avatar-image:url(./assets/AvatarDark)
+  --avatar-image:url(./assets/AvatarDark);
+  --icon-svg:url(./assets/MoonStars.svg);
 }
 
 .light{
@@ -21,7 +22,8 @@
   --border-color: rgba(0,0,0,0.5);
   --button-bg-color: rgba(0,0,0,0.05);
   --button-bg-color-hover: rgba(0,0,0,0.1);
-  --avatar-image:url(./assets/AvatarLight)
+  --avatar-image:url(./assets/AvatarLight);
+  --icon-svg:url(./assets/Sun.svg);
 }
 
 body{
@@ -63,12 +65,19 @@ color: var(--itens-colors);
   margin: 0 auto 24px;
   width: 58px;
   position: relative;
+  border-radius: 9999px;
+}
+
+#switch:hover{
+  button{
+    outline: 6px solid var(--border-color)
+  }
 }
 
 #switch button{
   width: 22px;
   height: 22px;
-  background: var(--icon-bg-colors) url(./assets/MoonStars.svg) no-repeat center;
+  background: var(--icon-bg-colors) var(--icon-svg) no-repeat center;
   border:0;
   border-radius: 50%;
   position: absolute;
@@ -76,23 +85,26 @@ color: var(--itens-colors);
   top:50%;
   left: 3px;
   transform: translateY(-50%);
+  animation: slide-back 0.2s;
 }
 
+
+
 .light #switch button{
-  right: 3px;
-  background: var(--icon-bg-colors) url(./assets/Sun.svg) no-repeat center;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span{
   display: block;
   width: 56px;
-  height: 24px;
+  height: 28px;
   background: var(--button-bg-color);
   border: 1.5px solid var(--border-color);
   backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
+
+
 
 ul{
   list-style: none;
@@ -140,6 +152,25 @@ ion-icon {
   }
   .light{
     --bg-image: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 3;
+  }
+  to {
+    left: 53%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 53%;
+  }
+  to {
+    left:3px;
   }
 }
 
